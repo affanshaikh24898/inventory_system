@@ -1,20 +1,32 @@
-# Laravel 10 Custom User Registration and Login Tutorial
-Learn how to develop a simple Laravel 10 custom user registration and login application
+1)set the project on proper folder
+xampp-htdoc folder
+wamp-www folder
 
-> The complete tutorial step by step guide is available on my blog. [Laravel 10 Custom User Registration and Login](https://www.allphptricks.com/laravel-custom-user-registration-and-login-tutorial/)
+2)change the env file
+-add database name username and password in env file
+-set you email account smtp credential to send the message
+-set low quantity and expire day count in env file
 
-## Blog
-https://www.allphptricks.com/
+3)run migration command to create database
+-php artisan migrate
+
+4)run seeder command to for sample user id's
+-php artisan db:seed --class=UserSeederCommand
+-check and get id and password form seeder file
+
+5)login with provided  id or create new user
+
+6)add some products for the testing,
+-products are depend on users so please create products before test
+
+7)run dashboard scheduler
+-this scheduler will run only for specific login user only
+
+8)run cronjob through command line
+-php artisan schedule:run
+-it send all user specifice mail for inventory update
+-send product quantity mail
+-send product lot expire mail
 
 
-## Installation 
-Make sure that you have setup the environment properly. You will need minimum PHP 8.1, MySQL/MariaDB, and composer.
 
-1. Download the project (or clone using GIT)
-2. Copy `.env.example` into `.env` and configure your database credentials
-3. Go to the project's root directory using terminal window/command prompt
-4. Run `composer install`
-5. Set the application key by running `php artisan key:generate --ansi`
-6. Run migrations `php artisan migrate`
-7. Start local server by executing `php artisan serve`
-8. Visit here [http://127.0.0.1:8000/register](http://127.0.0.1:8000/register) to test the application
